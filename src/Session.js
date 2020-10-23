@@ -177,7 +177,7 @@ Session.prototype = {
       throw new TypeError('Invalid statusCode: '+ statusCode);
     }
 
-    options.receiveResponse = function () {};
+    if (!options.receiveResponse) options.receiveResponse = function () {};
 
     return this.
       sendRequest(SIP.C.BYE, options).
